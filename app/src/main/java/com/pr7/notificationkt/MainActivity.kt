@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
             createNotificationChannel()
 
+            //Add action
             val intent = Intent(this, MainActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             }
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
             }
             val pendingIntent2: PendingIntent = PendingIntent.getActivity(this, 0, intent2, 0)
 
+            //Simple notification
             val notificationCompat = NotificationCompat.Builder(this, CHANNEL_ID)
             notificationCompat.setSmallIcon(R.drawable.ic_baseline_message_24)
             notificationCompat.setContentTitle("Simple Notification")
